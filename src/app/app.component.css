@@ -1,0 +1,11 @@
+.container{
+    width: 480px;
+    text-align: center;
+    display: flex;
+    overflow: hidden;
+}
+
+.input-style {
+    margin-top: .5rem;
+    width: 100%; 
+}

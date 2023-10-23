@@ -1,31 +1,42 @@
 <div class="container">
-  <form method="post">
+  <form method="post" [formGroup]="formTest" (ngSubmit)="onSubmit()">
     <div class="input-style">
       <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre">
+      <input type="text" id="nombre" formControlName="nombre">
     </div>
     <div class="input-style">
       <label for="apellido">Apellido:</label>
-      <input type="text" id="apellido">
+      <input type="text" id="apellido" formControlName="apellido">
     </div>
     <div class="input-style">
       <label for="edad">Edad:</label>
-      <input type="number" id="edad" min="16">
+      <input type="number" id="edad" min="16" formControlName="edad">
     </div>
     <fieldset class="input-style">
       <legend>Selecciona el sexo:</legend>
       <div>
-        <input type="radio" name="" id="hombre" name="sexo" value="M">
+        <input type="radio" name="" id="hombre" name="sexo" value="M" checked formControlName="sexo">
         <label for="hombre">Hombre</label>
       </div>
       <div>
-        <input type="radio" name="" id="mujer" name="sexo" value="F">
+        <input type="radio" name="" id="mujer" name="sexo" value="F" formControlName="sexo">
         <label for="mujer">Mujer</label>
       </div>
     </fieldset>
     <label for="bio">Sobre el candidato:</label>
     <div class="input-style">
-      <textarea name="bio" id="bio" cols="20" rows="8"></textarea>
+      <textarea name="bio" id="bio" cols="20" rows="8" formControlName="bio"></textarea>
     </div>
+    <hr>
+    <button type="submit" [disabled]="formTest.invalid">Enviar</button>
   </form>
+</div>
+<br>
+<div>{{formTest.value | json}}</div>
+<hr>
+<div>
+  Esto es una prueba: <span class="prueba">{{stringDePrueba}}</span>
+</div>
+<div>
+  <button (click)="ObtenerStringDePrueba()">Probar</button>
 </div>

@@ -9,3 +9,9 @@
     margin-top: .5rem;
     width: 100%; 
 }
+
+.prueba {
+    color: chartreuse;
+    background-color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
